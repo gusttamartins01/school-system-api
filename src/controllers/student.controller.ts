@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
+import type { CreateStudentInput, UpdateStudentInput} from '../schemas/student.schema.ts'
 import * as StudentService from '../services/student.service.ts';
-import type { CreateStudent, UpdateStudent } from '../types.ts';
 
 export function getAllStudent(_request: Request, response: Response) {
 	const student = StudentService.findAllStudents();
@@ -17,7 +17,7 @@ export function getStudentById(request: Request, response: Response) {
 }
 
 export function createStudent(request: Request, response: Response) {
-	const { name, email, matricula } = request.body as CreateStudent;
+	const { name, email, matricula } = request.body as CreateStudentInput;
 
 	const student = StudentService.insertStudents({ name, email, matricula });
 
@@ -26,7 +26,7 @@ export function createStudent(request: Request, response: Response) {
 
 export function updateStudent(request: Request, response: Response) {
 	const id = Number(request.params.id);
-	const { name, email, matricula, turma } = request.body as UpdateStudent;
+	const { name, email, matricula, turma } = request.body as UpdateStudentInput;
 
 	const student = StudentService.modifyStudents(id, {
 		name,
@@ -38,7 +38,7 @@ export function updateStudent(request: Request, response: Response) {
 	response.status(200).json(student);
 }
 
-export function deletreStudent(request: Request, response: Response) {
+export function deleteStudent(request: Request, response: Response) {
 	const id = Number(request.params.id);
 
 	StudentService.deleteStudents(id);

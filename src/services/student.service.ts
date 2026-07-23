@@ -1,6 +1,7 @@
 import { NotFoundError } from '../errors/index.ts';
 import { students } from '../mocks/students.mock.ts';
-import type { CreateStudent, Student, UpdateStudent } from '../types.ts';
+import type { CreateStudentInput, UpdateStudentInput } from '../schemas/student.schema.ts'
+import type { Student } from '../types.ts';
 
 export function findAllStudents(): Student[] {
 	return students;
@@ -18,7 +19,7 @@ export function insertStudents({
 	name,
 	email,
 	matricula,
-}: CreateStudent): Student {
+}: CreateStudentInput): Student {
 	const student: Student = {
 		id: students[students.length - 1].id + 1,
 		name: name,
@@ -34,7 +35,7 @@ export function insertStudents({
 
 export function modifyStudents(
 	id: number,
-	{ name, email, matricula, turma }: UpdateStudent,
+	{ name, email, matricula, turma }: UpdateStudentInput,
 ): Student {
 	const student = students.find((s) => s.id === id);
 
