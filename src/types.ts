@@ -17,5 +17,4 @@ export type Teacher = {
 	turma: string;
 };
 
-export type CreateTeacher = Omit<Teacher, 'id' | 'turma'>;
-export type UpdateTeacher = Partial<Omit<Teacher, 'id'>>;
+
