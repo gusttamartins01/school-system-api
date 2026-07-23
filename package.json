@@ -4,7 +4,8 @@
 	"description": "",
 	"type": "module",
 	"scripts": {
-		"dev": "node --watch --env-file=.env ./src/server.ts"
+		"dev": "node --watch --env-file=.env ./src/server.ts",
+		"start": "node --watch --env-file=.env ./src/server.ts"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.4",
