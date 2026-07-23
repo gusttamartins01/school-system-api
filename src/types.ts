@@ -5,10 +5,6 @@ export type Student = {
 	matricula: string;
 	turma: string;
 };
-
-export type CreateStudent = Omit<Student, 'id' | 'turma'>;
-export type UpdateStudent = Partial<Omit<Student, 'id'>>;
-
 export type Teacher = {
 	id: number;
 	name: string;
@@ -16,5 +12,3 @@ export type Teacher = {
 	cod_rp: string;
 	turma: string;
 };
-
-
