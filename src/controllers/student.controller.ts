@@ -1,5 +1,8 @@
 import type { Request, Response } from 'express';
-import type { CreateStudentInput, UpdateStudentInput} from '../schemas/student.schema.ts'
+import type {
+	CreateStudentInput,
+	UpdateStudentInput,
+} from '../schemas/student.schema.ts';
 import * as StudentService from '../services/student.service.ts';
 
 export function getAllStudent(_request: Request, response: Response) {

@@ -1,8 +1,7 @@
 import { Router } from 'express';
-import * as TeacherController from "../controllers/teacher.controller.ts"
+import * as TeacherController from '../controllers/teacher.controller.ts';
 
 const router = Router();
-
 
 router.get('/', TeacherController.getAllTeacher);
 router.get('/:id', TeacherController.getTeacherById);

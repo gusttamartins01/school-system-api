@@ -1,6 +1,9 @@
 import { NotFoundError } from '../errors/index.ts';
 import { students } from '../mocks/students.mock.ts';
-import type { CreateStudentInput, UpdateStudentInput } from '../schemas/student.schema.ts'
+import type {
+	CreateStudentInput,
+	UpdateStudentInput,
+} from '../schemas/student.schema.ts';
 import type { Student } from '../types.ts';
 
 export function findAllStudents(): Student[] {
