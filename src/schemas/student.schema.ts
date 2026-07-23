@@ -13,7 +13,7 @@ export const updateStudentSchema = z.object({
     turma: z.string().min(1).optional(),
 });
 
-export type CreateCustomerInput = z.infer<typeof createStudentSchema>;
-export type UpdateCustomerInput = z.infer<typeof updateStudentSchema>;
+export type CreateStudentInput = z.infer<typeof createStudentSchema>;
+export type UpdateStudentInput = z.infer<typeof updateStudentSchema>;
 
 
