@@ -3,7 +3,7 @@ import type { ZodType } from 'zod';
 import { ValidationError } from '../errors/index.ts';
 
 export default function validate(schema: ZodType) {
-	return (next: NextFunction, request: Request, _response: Response) => {
+	return (request: Request, _response: Response, next:NextFunction) => {
 		const result = schema.safeParse(request.body);
 
 		if (!result.success) {
